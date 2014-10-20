@@ -364,3 +364,29 @@ Served asset /jquery_ujs.js - 304 Not Modified (17ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-19 23:51:04 -0300
 Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/movies?id=title_header&order=title" for 127.0.0.1 at 2014-10-20 13:48:07 -0300
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header", "order"=>"title"}
+  [1m[36mMovie Load (6.7ms)[0m  [1mSELECT "movies".* FROM "movies" ORDER BY title[0m
+  Rendered movies/index.html.haml within layouts/application (361.6ms)
+Compiled application.css  (1ms)  (pid 15142)
+Completed 200 OK in 1418.2ms (Views: 871.0ms | ActiveRecord: 42.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-20 13:48:14 -0300
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-20 13:48:14 -0300
+Served asset /jquery.js - 304 Not Modified (381ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-20 13:48:14 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-20 13:48:14 -0300
+Served asset /application.js - 304 Not Modified (156ms)
