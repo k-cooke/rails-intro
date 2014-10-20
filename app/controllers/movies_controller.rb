@@ -6,6 +6,10 @@ class MoviesController < ApplicationController
     # will render app/views/movies/show.<extension> by default
   end
 
+  def ratings
+    ['G', 'PG', 'PG-13', 'R']
+  end
+
   def index
     sort = params[:order]
     if sort != nil
