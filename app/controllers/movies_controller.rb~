@@ -7,13 +7,18 @@ class MoviesController < ApplicationController
   end
 
   def index
-    sort = params[:order]
-    if sort != nil
-      @movies = Movie.order(sort)
-    else
-      @movies = Movie.all
+     sort = params[:sort] || 'id'
+    
+     if sort == 'title'
+     @title_sort = 'hilite'
+     end
+     if sort == 'rating'
+     @rating_sort = 'hilite'
+     end
+     @all_ratings = Movie.all_ratings
+     
+     @movies = Movie.all(:order => sort)
     end
-  end
 
   def new
     # default: render 'new' template
@@ -41,6 +46,10 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+  
+  def rating
+    ['G', 'PG', 'PG-13', 'R']
   end
 
 end
